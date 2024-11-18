@@ -11,16 +11,22 @@ pipeline{
                 git url : 'https://github.com/ShijithDG/docker-practise-nov.git'
             }
         }
-        stage('install dependencies'){
-            steps{
-                sh 'pip install -r requirement.txt'
-            }
-        }
         stage('package'){
             steps{
                 sh 'tar -cvf  my_app.tar.gz app.py'
                 echo'successfuly completed making zip file'
             }
+        }
+    }
+    post{
+        always{
+            echo 'cleaning'
+        }
+        success {
+            echo ' success'
+        }
+        failure{
+            echo 'failed'
         }
     }
 }
