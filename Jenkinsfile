@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('chekout'){
             steps{
-                git url : 'https://github.com/ShijithDG/docker-practise-nov.git'
+                git url : 'https://github.com/ShijithDG/docker-practise-nov.git', branch:'main'
             }
         }
         stage('package'){
