@@ -19,6 +19,7 @@ pipeline{
         stage('package'){
             steps{
                 sh 'tar -cvf  my_app.tar.gz app.py'
+                echo'successfuly completed making zip file'
             }
         }
     }
